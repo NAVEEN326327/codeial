@@ -16,6 +16,6 @@ router.use('/users', require('./users'));
 //for any further routes, access from here
 // router.use('/routerName', require('./routerfile'));
 
-router.use('/login', require('./login'));
+router.use('/login', require('./login'));        ////// localhost:port/login/signup
 
 module.exports = router;
