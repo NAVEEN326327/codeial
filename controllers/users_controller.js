@@ -1,10 +1,23 @@
 const User = require('../models/user');
 
-module.exports.profile = (err, res) => {
-    // res.end('<h1>User Profile</h1>');
-    return res.render('profile', {
-        title: "Profile Page"
-    });
+module.exports.profile = (req, res) => {
+    // // res.end('<h1>User Profile</h1>');
+    // return res.render('profile', {
+    //     title: "Profile Page",
+    // });
+    if (req.cookies.user_id) {
+        User.findById(req.cookies.user_id, (err, user) => {
+            if (user) {
+                return res.render('user_profile', {
+                    title: "User Profile",
+                    user: user
+                })
+            }
+            return res.redirect('/users/sign-in');
+        });
+    } else {
+        return res.redirect('/users/sign-in');
+    }
 }
 
 // user section followed by user signup
@@ -61,6 +74,7 @@ module.exports.createSession = (req, res) => {
             }
             //handle session creation
             res.cookie('user_id', user.id);
+
             return res.redirect('/users/profile');
 
         } else {
@@ -71,6 +85,21 @@ module.exports.createSession = (req, res) => {
 
     });
 
+}
+
+//Distroy session 
+module.exports.distroySession = (req, res) => {
+ 
+
+if(req.cookies.user_id){
+    console.log("signed out");
+    res.cookie('user_id', ""); //distroying user_id in cookie
+    return res.redirect('/users/sign-in');
+}
+else{
+ 
+    return res.redirect('/users/profile');
+}
 
 
 
