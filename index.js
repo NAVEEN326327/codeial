@@ -9,6 +9,13 @@ const session = require('express-session');
 const passport = require('passport');
 const passportLocal = require('./config/passport-local-strategy');
 
+const sassMiddleware = require('node-sass-middleware');
+
+
+
+app.use(sassMiddleware({
+    src: '/assests/scss'
+}))
 app.use(express.urlencoded());
 
 app.use(cookieParser());
