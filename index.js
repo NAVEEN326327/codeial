@@ -14,7 +14,10 @@ const sassMiddleware = require('node-sass-middleware');
 
 
 app.use(sassMiddleware({
-    src: '/assests/scss'
+    src: '/assests/scss', 
+    dest: '/assets/css',
+    debug: true,
+    
 }))
 app.use(express.urlencoded());
 
