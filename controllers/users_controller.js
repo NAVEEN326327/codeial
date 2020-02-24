@@ -48,6 +48,6 @@ module.exports.create = (req, res) => {
 
 module.exports.createSession = (req, res) => {
 
- return res.redirect('/');
+ return res.redirect('/users/profile');
 
 }
