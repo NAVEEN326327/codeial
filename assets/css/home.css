@@ -1,0 +1,25 @@
+input{
+    border: none;
+    border: 1px solid blue;
+    width: 100px;
+    height: 30px;
+    color: blue;
+    font-size: 1.2rem;
+    border-radius: 5%;
+    margin-bottom:2% ;
+}
+
+
+#main_content{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    height: inherit;
+    margin-bottom: 5%;
+}
+.events{
+    margin-top:10px;
+    width: 80%;
+    border-top: 0.5px solid white;
+}
