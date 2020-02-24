@@ -1,12 +1,15 @@
 input{
+    
     border: none;
-    border: 1px solid blue;
+    border: 1px solid black;
     width: 100px;
     height: 30px;
-    color: blue;
+    color: whitesmoke;
     font-size: 1.2rem;
     border-radius: 5%;
     margin-bottom:2% ;
+    background-color: black;
+
 }
 
 
@@ -14,12 +17,76 @@ input{
     width: 100%;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
-    height: inherit;
-    margin-bottom: 5%;
+    justify-content: space-around;
+align-items: center;
+     flex-shrink: inherit;
+     margin-bottom: 10px;
+
 }
 .events{
-    margin-top:10px;
-    width: 80%;
-    border-top: 0.5px solid white;
+    width: 45%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+     margin-left: -35px;
 }
+.about{
+    width: 45%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+     margin-left: -35px;
+     background-color: lightgray;
+     padding: 10px;
+     border-radius:10px;
+
+}
+
+#home_button{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+align-items: center;
+     flex-shrink: inherit;
+     margin-bottom: 10px;
+}
+
+@media only screen and (max-width: 600px) {
+  
+#main_content{
+    width: 100%;
+    
+ 
+align-items: center;
+     flex-shrink: inherit;
+     margin-bottom: 10px;
+
+}
+.events{
+    width: 45%;
+  
+    justify-content: space-between;
+
+     margin-left: -35px;
+}
+.about{
+    width: 45%;
+ 
+    justify-content: space-between;
+
+     margin-left: -35px;
+
+}
+
+#home_button{
+    width: 100%;
+ 
+    justify-content: space-around;
+align-items: center;
+     flex-shrink: inherit;
+     margin-bottom: 10px;
+}
+  }
