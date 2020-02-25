@@ -3,7 +3,7 @@ h2{
     
 }
 
-input[type=text], select {
+.signUpForm input[type=text], select {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -12,7 +12,7 @@ input[type=text], select {
     border-radius: 4px;
     box-sizing: border-box;
   }
-  input[type=password], select {
+  .signUpForm input[type=password], select {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -21,7 +21,7 @@ input[type=text], select {
     border-radius: 4px;
     box-sizing: border-box;
   }
-  input[type=email], select {
+  .signUpForm input[type=email], select {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -31,7 +31,7 @@ input[type=text], select {
     box-sizing: border-box;
   }
   
-  input[type=submit] {
+  .signUpForm input[type=submit] {
     width: 100%;
     background-color: #4CAF50;
     color: white;
@@ -42,12 +42,12 @@ input[type=text], select {
     cursor: pointer;
   }
   
-  input[type=submit]:hover {
+  .signUpForm input[type=submit]:hover {
     background-color: #45a049;
   }
   
   @media only screen and (min-width: 600px) {
-  div {
+    .signUpForm {
     border-radius: 5px;
     background-color: #f2f2f2;
     padding: 20px;
@@ -57,11 +57,11 @@ input[type=text], select {
   }
 /* Redefine css for responsiveness */
   @media only screen and (max-width: 600px) {
-    body {
+    .signUpForm body {
       background-color: lightblue;
       
     }
-    div {
+    .signUpForm div {
         border-radius: 5px;
         background-color: #f2f2f2;
         padding: 20px;
