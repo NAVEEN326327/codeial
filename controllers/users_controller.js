@@ -8,7 +8,7 @@ module.exports.profile = (req, res) => {
     if (req.cookies.user_id) {
         User.findById(req.cookies.user_id, (err, user) => {
             if (user) {
-                return res.render('user_profile', {
+                return res.render('profile', {
                     title: "User Profile",
                     user: user
                 })
