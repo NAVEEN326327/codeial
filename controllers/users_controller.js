@@ -10,13 +10,23 @@ module.exports.profile = (err, res) => {
 // user section followed by user signup
 //render the sign up page
 module.exports.signUp = (req, res) => {
+    if(req.isAuthenticated()){
+     return res.redirect('/users/profile');  // if user already signin
+    }
+
     return res.render('user_sign_up', {
+
         title: "Codeial | Sign Up"
     })
 }
 
 // render signIn page 
 module.exports.signIn = (req, res) => {
+ 
+    if(req.isAuthenticated()){
+       return res.redirect('/users/profile');  // if user already signin
+    }
+
     return res.render('user_sign_in', {
         title: "Codeial | Sign In"
     })
