@@ -1,6 +1,4 @@
-body{
-    text-align: center;
-}
+
 #form-main-body>div{
     margin-top: 10px;
 }
@@ -59,4 +57,8 @@ button{
     background-color: blue;
     color: white;
     height: 35px;
+}
+
+#heade_sign_in_link{
+    text-decoration: none;
 }
