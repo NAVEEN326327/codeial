@@ -30,16 +30,37 @@
               </button>
         </form>  -->
     </div>
-    <div>
-        Welcome, adijawwev dakfjajiews dfdkajeoiw dskfasijfjmsdlk fasdfioawjefnsakdf aw efdjoasdjfoi aoisdfjoiawenkdj fasdfijaslkfksdfak sflkv erwijfasd fasldfjoiawej adn sdhxioajsf sad flkajierjfaw sfnklsejriawksdnf ,asefoifjas odkfaklsdfj o
-
-    </div>
+   
    <section id="feed-posts">
        <h4>Posts</h4>
        <form action="/posts/create" id="new-post-form" method="POST">
-           <textarea name="content" cols="30" rows="4" placeholder="Type here...."></textarea>
+           <textarea name="content" cols="50" rows="4" placeholder="Type here...."></textarea>
     <input type="submit" value="Post">
         </form>
+
+        <div id="posts-list-container">
+            
+                <% for(post of posts){ %>
+                   <div>
+                       <div>
+                     <h5>
+                        <%= post.content %>
+
+                     </h5>  
+                       </div>
+                       <div>
+                           <h5><b> Name:  </b>
+                            <%= post.user.name %>
+
+                           </h5>
+
+                       </div>
+                   </div>
+
+                  
+                <%} %>
+        
+        </div>
    </section>
 </div>
 </div>
