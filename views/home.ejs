@@ -33,10 +33,16 @@
    
    <section id="feed-posts">
        <h4>Posts</h4>
-       <form action="/posts/create" id="new-post-form" method="POST">
-           <textarea name="content" cols="50" rows="4" placeholder="Type here...."></textarea>
-    <input type="submit" value="Post">
-        </form>
+<% if(locals.user){ %>
+    
+    <form action="/posts/create" id="new-post-form" method="POST">
+        <textarea name="content" cols="50" rows="4" placeholder="Type here...."></textarea>
+ <input type="submit" value="Post">
+     </form>
+
+<% } %>
+
+
 
         <div id="posts-list-container">
             
