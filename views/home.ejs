@@ -51,9 +51,9 @@
                     <div>
                         <div>
                             <% if((locals.user) && (locals.user.id == post.user.id)){ %>
-                            
+
                             <small>
-                                <a href="/posts/destroy/<%= post.id %>" >X</a>
+                                <a href="/posts/destroy/<%= post.id %>">X</a>
                             </small>
                             <% } %>
                             <h5>
@@ -77,20 +77,26 @@
                                 <input type="submit" value="Add comment">
                             </form>
                             <% } %>
-                            
+
                             <div class="post-commnets-list">
-                                 <ul id="post-comments-<%=post._id %> ">
-                                     <% for (comment of post.comments) { %>
+                                <ul id="post-comments-<%=post._id %> ">
+                                    <% for (comment of post.comments) { %>
                                     <p>
+                                        <% if((locals.user) && (locals.user.id == comment.user.id)){ %>
+
+                                        <small>
+                                            <a href="/comments/destroy/<%= comment.id %>">x</a>
+                                        </small>
+                                        <% } %>
                                         <%= comment.content %>
                                         <br>
                                         <small style="font-weight: 900">
                                             <%=comment.user.name %>
                                         </small>
                                     </p>
-                                    
+
                                     <% } %>
-                                 </ul>
+                                </ul>
                             </div>
 
                         </div>
