@@ -37,7 +37,7 @@
                 <% if(locals.user){ %>
 
                 <form action="/posts/create" id="new-post-form" method="POST">
-                    <textarea name="content" cols="50" rows="4" placeholder="Type here...."></textarea>
+                    <textarea name="content" cols="50" rows="4" placeholder="Type here...." required></textarea>
                     <input type="submit" value="Post">
                 </form>
 
@@ -50,6 +50,12 @@
                     <% for(post of posts){ %>
                     <div>
                         <div>
+                            <% if((locals.user) && (locals.user.id == post.user.id)){ %>
+                            
+                            <small>
+                                <a href="/posts/destroy/<%= post.id %>" >X</a>
+                            </small>
+                            <% } %>
                             <h5>
                                 <%= post.content %>
 
@@ -66,11 +72,27 @@
                         <div class="post-comment">
                             <% if (locals.user){ %>
                             <form action="/comments/create" method="POST">
-                                <input type="text" name="content" placeholder="Type here to add comment....">
+                                <input type="text" name="content" placeholder="Type here to add comment...." required>
                                 <input type="hidden" name="post" value="<%= post._id %>">
                                 <input type="submit" value="Add comment">
                             </form>
                             <% } %>
+                            
+                            <div class="post-commnets-list">
+                                 <ul id="post-comments-<%=post._id %> ">
+                                     <% for (comment of post.comments) { %>
+                                    <p>
+                                        <%= comment.content %>
+                                        <br>
+                                        <small style="font-weight: 900">
+                                            <%=comment.user.name %>
+                                        </small>
+                                    </p>
+                                    
+                                    <% } %>
+                                 </ul>
+                            </div>
+
                         </div>
                     </div>
 
