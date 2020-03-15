@@ -91,12 +91,13 @@ align-items: center;
 }
   }
 
+   /* /////////////////////////////////////////////////////// */
   #posts-list-container{
      display: flex;
      flex-direction: column;
      justify-content: space-between;
 
-      width: 400px;
+      width: 550px;
       height: 400px;
       overflow: scroll;
   }
