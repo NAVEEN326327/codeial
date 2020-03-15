@@ -11,8 +11,11 @@ module.exports.create = (req, res) => {
             }, (err, comment) => {
                 // Handle error
 
+                // pushing comments to array of comment
                 post.comments.push(comment);
+                // save finalazed comment
                 post.save();
+                
 
                 res.redirect('/');
 
