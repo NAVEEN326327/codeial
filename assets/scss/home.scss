@@ -1,0 +1,46 @@
+#home_container{
+    display: flex;
+    justify-content: space-between;
+    background-color: blanchedalmond;
+    #feed-posts{
+        width: 150%;
+        padding: 10px;
+        
+        
+
+    }
+
+    #user-friends{
+        width: 30%;
+        padding: 10px;
+        border-left: 1px solid lightgray;
+        height: 100%;
+    }
+
+    #posts-list-container{
+        display: flex;
+        flex-direction: column-reverse;
+        position: relative;
+    }
+    #posts{
+        width: 300px;
+        border: 1px solid blue;
+
+    }
+    a{
+        color: black;
+    }
+
+    #button{
+        border-style: none;
+        background: transparent;
+        border: 1px solid blueviolet;
+        background-color: blue;
+        width: 70px;
+        height: 40px;
+        border-radius: 5px;
+        color: wheat;
+        font-size: 2rem;
+        font-weight: 700;
+    }
+}

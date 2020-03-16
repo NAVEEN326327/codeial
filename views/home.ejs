@@ -2,57 +2,51 @@
 
 
 
-<section id="home_content">
-    <h1> <%= title %></h1>
-    <div id="main_content">
-        <section id="user-friends">
-            <h4>Friends</h4>
-            <% for(u of all_users){ %>
-               <p>
-                   <a href="/users/profile/<%= u.id %>"><%= u.name %></a>
-               </p>
-           <% } %>
-        </section>
-        <div class="events">
-            <div id="home_button">
-                <h2>
-                    Sign In for publish events
-                </h2>
-
-                <!--         
-        <form action="/users/sign-in">
-            <input class="btn btn-default" type="submit" value="Sign In">
-            <button type="button" class="btn btn-default">
-                <span class="glyphicon glyphicon-search"></span> Search
-              </button>
-        </form>  -->
-            </div>
-
-            <section id="feed-posts">
-                <h4>Posts</h4>
-                <% if(locals.user){ %>
-
-                <form action="/posts/create" id="new-post-form" method="POST">
-                    <textarea name="content" cols="50" rows="4" placeholder="Type here...." required></textarea>
-                    <input type="submit" value="Post">
-                </form>
-
-                <% } %>
+<!-- <h1> <%= title %></h1> -->
+<div id="home_container">
+  
+    <div class="feed-posts">
+        <div id="home_button">
+            <h2>
+                Sign In to publish posts
+            </h2>
 
 
-
-                <div id="posts-list-container">
-
-                    <% for(post of posts){ %>
-
-                    <%- include('_post') -%>
-
-
-                    <%} %>
-
-                </div>
-            </section>
         </div>
+
+        <section id="feed-posts">
+            <h4>Posts</h4>
+            <% if(locals.user){ %>
+
+            <form action="/posts/create" id="new-post-form" method="POST">
+                <textarea name="content" cols="50" rows="4" placeholder="Type here...." required></textarea>
+                <input type="submit" value="Post" id="button">
+            </form>
+
+            <% } %>
+
+
+
+            <div id="posts-list-container">
+
+                <% for(post of posts){ %>
+
+                <%- include('_post') -%>
+
+
+                <%} %>
+
+            </div>
+        </section>
     </div>
 
-</section>
+    <div id="user-friends">
+        <h4>Friends</h4>
+        <% for(u of all_users){ %>
+        <p>
+            <a href="/users/profile/<%= u.id %>"><%= u.name %></a>
+        </p>
+        <% } %>
+    </div>
+
+</div>
