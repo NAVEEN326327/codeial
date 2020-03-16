@@ -5,18 +5,14 @@
 <section id="home_content">
     <h1> <%= title %></h1>
     <div id="main_content">
-        <div class="about">
-            <h4>Event Publishing Web application</h4>
-            <p>
-                Event publising web application helps in publishing your events to every one. You need to register for
-                publishing your event! but no need to register if you want to see public events.
-            </p>
-            <h4>How it works?</h4>
-            <p>Step 1: Click on Sign In button.
-                Step 2: Register yourself if you are first time user else Sign In</p>
-            Step 3: After validation your credentials from database you get event form
-
-        </div>
+        <section id="user-friends">
+            <h4>Friends</h4>
+            <% for(u of all_users){ %>
+               <p>
+                   <a href="/users/profile/<%= u.id %>"><%= u.name %></a>
+               </p>
+           <% } %>
+        </section>
         <div class="events">
             <div id="home_button">
                 <h2>

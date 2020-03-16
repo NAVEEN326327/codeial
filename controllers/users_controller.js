@@ -1,17 +1,32 @@
 const User = require('../models/user');
 
-module.exports.profile = (err, res) => {
-    // res.end('<h1>User Profile</h1>');
-    return res.render('profile', {
-        title: "Profile Page"
-    });
+module.exports.profile = (req, res) => {
+    User.findById(req.params.id, (err, user) => {
+        // res.end('<h1>User Profile</h1>');
+        return res.render('profile', {
+            title: "Profile Page",
+            profile_user: user
+
+        });
+    })
+}
+
+module.exports.update = (req,res)=>{
+    if(req.user.id == req.params.id){
+        User.findByIdAndUpdate(req.params.id, req.body, (err, user)=>{
+            return res.redirect('back');
+        });
+    }else{
+        return res.status(401).send('Unautherized');
+    }
+
 }
 
 // user section followed by user signup
 //render the sign up page
 module.exports.signUp = (req, res) => {
-    if(req.isAuthenticated()){
-     return res.redirect('/users/profile');  // if user already signin
+    if (req.isAuthenticated()) {
+        return res.redirect('/users/profile');  // if user already signin
     }
 
     return res.render('user_sign_up', {
@@ -22,9 +37,9 @@ module.exports.signUp = (req, res) => {
 
 // render signIn page 
 module.exports.signIn = (req, res) => {
- 
-    if(req.isAuthenticated()){
-       return res.redirect('/users/profile');  // if user already signin
+
+    if (req.isAuthenticated()) {
+        return res.redirect('/users/profile');  // if user already signin
     }
 
     return res.render('user_sign_in', {
@@ -58,11 +73,11 @@ module.exports.create = (req, res) => {
 
 module.exports.createSession = (req, res) => {
 
- return res.redirect('/');
+    return res.redirect('/');
 
 }
 
-module.exports.destroySession = (req,res)=>{
+module.exports.destroySession = (req, res) => {
     req.logout();
     return res.redirect('/');
 }
