@@ -11,7 +11,9 @@ module.exports.create = async (req, res) => {
                 content: req.body.content,
                 post: req.body.post,
                 user: req.user._id
+                
             });
+            req.flash('success', 'comment made!');
 
             post.comments.push(comment);
             post.save();
@@ -19,13 +21,16 @@ module.exports.create = async (req, res) => {
             res.redirect('/');
         }
     } catch (err) {
-        console.log('Error: ', err);
-        return;
+        req.flash('success', 'Error in creating comment!');
+
+        return res.redirect('back');
+
     }
 }
 
 
 module.exports.destroy = async (req, res) => {
+    req.flash('success', 'comment deleted!');
 
     try {
         let comment = await Comment.findById(req.params.id);
@@ -48,8 +53,9 @@ module.exports.destroy = async (req, res) => {
 
 
     } catch (err) {
-        console.log("Error: ", err);
-        return;
+        req.flash('success', 'Error in deleting comment!');
+
+        return res.redirect('back');
     }
 
 
