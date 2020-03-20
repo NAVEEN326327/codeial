@@ -30,7 +30,6 @@ module.exports.create = async (req, res) => {
 
 
 module.exports.destroy = async (req, res) => {
-    req.flash('success', 'comment deleted!');
 
     try {
         let comment = await Comment.findById(req.params.id);
@@ -45,6 +44,8 @@ module.exports.destroy = async (req, res) => {
                 $pull:
                     { comments: req.params.id }
             });
+            req.flash('success', 'comment deleted!');
+
             return res.redirect('back');
 
         } else {
