@@ -19,6 +19,8 @@
     border: 1px solid blue; }
   #home_container a {
     color: black; }
+  #home_container textarea {
+    border-style: none; }
   #home_container #button {
     border-style: none;
     background: transparent;
