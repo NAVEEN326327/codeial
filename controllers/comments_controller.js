@@ -13,6 +13,17 @@ module.exports.create = async (req, res) => {
                 user: req.user._id
                 
             });
+
+            //  2nd part after JS file for AJAX comment 
+            if(req.xhr){
+                return res.status(200).json({   // returns JSON with status
+                    data: {
+                        comment: comment
+                    },
+                    message: "Comment Created"
+                });
+            }
+
             req.flash('success', 'comment made!');
 
             post.comments.push(comment);

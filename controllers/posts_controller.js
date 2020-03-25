@@ -15,10 +15,12 @@ module.exports.create = async (req, res) => {
                     post: post
                 },
                 message: "Post created!"
+                
             });
-        }
 
+        }
         req.flash('success', 'Post published!');
+
         return res.redirect('back');
     } catch (err) {
         req.flash('success', 'Error Occured on publishing post!');
