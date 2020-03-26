@@ -1,0 +1,38 @@
+.post {
+  padding-left: 2rem;
+  background-color: #d9d9d9;
+  margin-bottom: 2rem; }
+  .post .content1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; }
+  .post a {
+    text-decoration: none;
+    font-size: 3rem;
+    margin-top: 3rem;
+    margin-right: 3rem; }
+  .post a:hover {
+    text-decoration: none; }
+  .post .content {
+    font-size: 3rem;
+    font-weight: 900; }
+  .post .post-comment > form {
+    display: flex;
+    flex-direction: column; }
+    .post .post-comment > form .form1 {
+      border-style: none;
+      height: 5rem;
+      margin-right: 2rem;
+      margin-bottom: 1rem;
+      padding-left: 1rem; }
+    .post .post-comment > form .button {
+      border-style: none;
+      background-color: purple;
+      height: 4rem;
+      width: 10rem;
+      color: white; }
+  .post .post-commnets-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-top: 2rem; }

@@ -7,19 +7,16 @@
   
     <div class="feed-posts">
         <div id="home_button">
-            <h2>
-                Sign In to publish posts
-            </h2>
+          
 
 
         </div>
 
         <section id="feed-posts">
-            <h4>Posts</h4>
             <% if(locals.user){ %>
 
             <form action="/posts/create" id="new-post-form" method="POST">
-                <textarea name="content" cols="50" rows="4" placeholder="Type here...." required></textarea>
+                <textarea name="content" cols="50" rows="4" placeholder="Hey..!! What's up ?" required></textarea>
                 <input type="submit" value="Post" id="button">
             </form>
 
@@ -41,11 +38,11 @@
     </div>
 
     <div id="user-friends">
-        <h4>Friends</h4>
+        <h4>User Friends</h4>
         <% for(u of all_users){ %>
-        <p>
+        <div id="p1">
             <a href="/users/profile/<%= u.id %>"><%= u.name %></a>
-        </p>
+        </div>
         <% } %>
     </div>
 

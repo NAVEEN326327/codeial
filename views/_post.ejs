@@ -1,20 +1,22 @@
+<link rel="stylesheet" href="/css/post.css">
 
 
-<div id="post-<%= post._id %>">
-    <div>
+<div id="post-<%= post._id %>" class="post">
+    <div class="content1">
+        <h1 class="content">
+            <%= post.content %>
+
+        </h1>
         <% if((locals.user) && (locals.user.id == post.user.id)){ %>
 
         <small>
             <a class="delete-post-button" href="/posts/destroy/<%= post.id %>">X</a>
         </small>
         <% } %>
-        <h5>
-            <%= post.content %>
-
-        </h5>
+       
     </div>
     <div>
-        <h5><b> Name: </b>
+        <h5><b> Posted By: </b>
             <%= post.user.name %>
 
         </h5>
@@ -24,9 +26,9 @@
     <div class="post-comment">
         <% if (locals.user){ %>
         <form action="/comments/create" method="POST" id="new-comment-form">
-            <input type="text" name="content" placeholder="Type here to add comment...." required>
-            <input type="hidden" name="post" value="<%= post._id %>">
-            <input type="submit" value="Add comment">
+            <input type="text" name="content" placeholder="Type here to add comment...." class="form1" required>
+            <input type="hidden" name="post" value="<%= post._id %>" >
+            <input type="submit" value="Add comment" class="button">
         </form>
         <% } %>
 

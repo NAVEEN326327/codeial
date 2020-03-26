@@ -1,15 +1,25 @@
-<li>
-    <p>
+<link rel="stylesheet" href="/css/comment.css">
+
+
+<li class="li-comment">
+    <div id="commnet-css">
         <% if((locals.user) && (locals.user.id == comment.user.id)){ %>
 
-        <small>
+        <small class="cut">
             <a href="/comments/destroy/<%= comment.id %>">x</a>
         </small>
-        <% } %>
-        <%= comment.content %>
-        <br>
-        <small style="font-weight: 900">
-            <%=comment.user.name %>
-        </small>
-    </p>
+         <% } %>
+         <div class="commnet-content">
+            <h4>
+                <%= comment.content %>
+    
+            </h4>
+           
+    
+            <small style="font-weight: 900" class="name">
+                <%=comment.user.name %>
+            </small>
+         </div>
+      
+    </div>
 </li>

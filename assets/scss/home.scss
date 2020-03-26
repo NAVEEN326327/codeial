@@ -1,26 +1,85 @@
 #home_container{
     display: flex;
     justify-content: space-between;
-    background-color: blanchedalmond;
     #feed-posts{
+        display: flex;
+        flex-direction: column;
         width: 150%;
         padding: 10px;
-        
-        
 
+   
+        #new-post-form{
+            display: flex;
+            flex-direction: column;
+            background-color:#d9d9d9;
+            margin-left: 10rem;
+            textarea{
+                border-style: none;
+                padding-left: 1rem;
+                margin: 2rem;
+            }
+            input{
+                
+                    border-style: none;
+                    background: transparent;
+                    background-color: purple;
+                    width: 100px;
+                    height: 40px;
+                    border-radius: 1px;
+                    color: white;
+                    font-size: 2rem;
+                    font-weight: 700;
+            
+                margin-left: 2rem;
+                margin-bottom: 2rem;
+            }
+        }
     }
 
     #user-friends{
         width: 30%;
         padding: 10px;
         border-left: 1px solid lightgray;
+        background-color: purple;
         height: 100%;
+        margin-top: 1rem;
+
+        h4{
+            color: gray;
+            padding-top: 5rem;
+            padding-bottom: 3rem;
+            font-size: 4rem;
+            padding-left: 10px;
+  
+        }
+#p1{
+    display: flex;
+    flex-direction: column-reverse;
+    
+}
+        #p1>a{
+            text-decoration: none;
+           border-style: none; 
+            color: white;
+            background-color: #bf00ff;
+            border-bottom: 2px solid purple;
+            padding-left: 10px;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            font-size: 2rem;
+            
+        }
+        #p1>a:hover{
+            background-color: #660066;
+            border-bottom: none;
+        }
     }
 
     #posts-list-container{
         display: flex;
         flex-direction: column;
-        position: relative;
+        margin-left: 10rem;
+        margin-top: 4rem;
     }
     #posts{
         width: 300px;
@@ -31,21 +90,7 @@
         color: black;
     }
 
-    textarea{
-        border-style: none;
-        
-    }
+  
 
-    #button{
-        border-style: none;
-        background: transparent;
-        border: 1px solid blueviolet;
-        background-color: blue;
-        width: 70px;
-        height: 40px;
-        border-radius: 5px;
-        color: wheat;
-        font-size: 2rem;
-        font-weight: 700;
-    }
+    
 }
