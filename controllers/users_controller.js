@@ -12,15 +12,7 @@ module.exports.profile = (req, res) => {
 }
 
 module.exports.update = async (req, res) => {
-    // if(req.user.id == req.params.id){
-    //     User.findByIdAndUpdate(req.params.id, req.body, (err, user)=>{
-    //         req.flash('success', 'Upadate!');
-    //         return res.redirect('back');
-    //     });
-    // }else{
-    //     req.flash('error', 'Unauthorized!');
-    //     return res.status(401).send('Unautherized');
-    // }
+   
 
     if (req.user.id == req.params.id) {
 

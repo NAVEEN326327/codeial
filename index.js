@@ -28,6 +28,9 @@ app.use(cookieParser());
 
 ////////////        for styling and structure part ///////////////
 app.use(express.static('./assets')); 
+// make th uploads path available to the browser
+app.use('/uploads', express.static(__dirname + '/uploads'))
+
 app.use(expressLayouts); 
 
 // extract style and scripts from sub pages into the layout
@@ -72,6 +75,12 @@ app.use(customMware.setFlash);
 
 //use express router
 app.use('/', require('./routes'));
+
+
+
+if (process.env.NODE_ENV === 'production'){
+    
+}
 
 app.listen(port, (err)=>{
     if(err){
