@@ -34,7 +34,7 @@ let storage = multer.diskStorage({
         cb(null, path.join(__dirname, '..', AVATAR_PATH));
     },
     filename: (req, file, cb)=>{
-        cb(null, file.filename + '-' + Date.now())
+        cb(null, file.fieldname + '-' + Date.now())
     }
 
 })
