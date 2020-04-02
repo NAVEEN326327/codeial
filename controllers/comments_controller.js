@@ -1,5 +1,6 @@
 const Comment = require('../models/comment');
 const Post = require('../models/post');
+const commentsMailer = require('../mailers/comments_mailer');
 
 module.exports.create = async (req, res) => {
 
@@ -14,8 +15,16 @@ module.exports.create = async (req, res) => {
                 
             });
 
+
+            post.comments.push(comment);
+            post.save();
+
+            comment = await comment.populate('user', 'name email').execPopulate();
+            commentsMailer.newComment(comment);
             //  2nd part after JS file for AJAX comment 
             if(req.xhr){
+
+                
                 return res.status(200).json({   // returns JSON with status
                     data: {
                         comment: comment
@@ -26,8 +35,6 @@ module.exports.create = async (req, res) => {
 
             req.flash('success', 'comment made!');
 
-            post.comments.push(comment);
-            post.save();
 
             res.redirect('/');
         }
