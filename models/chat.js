@@ -1,0 +1,12 @@
+const mongoose = require('mongoose');
+
+const chatSchema = new mongoose.Schema({
+
+    
+
+
+});
+
+
+const Chat = mongoose.model('Chat', ChatSchema);
+module.exports = Chat;
